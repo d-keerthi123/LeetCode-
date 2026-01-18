@@ -7,23 +7,19 @@ class Solution {
         Queue<TreeNode> q= new LinkedList<>();
 
         q.add(root);
-        q.add(null);
-        TreeNode last = null;
+
         while(!q.isEmpty()){
-            TreeNode curr=q.remove();
-            if(curr == null){
-                // level ended → add rightmost node
-                result.add(last.val);
 
-                if(q.isEmpty()){
-                    break;
-                }else{
-                    q.add(null);
+            int size=q.size();
+            for(int i=0;i<size;i++){
+                TreeNode curr=q.remove();
+
+            // rightmost node of this level
+            if(i== size-1){
+                result.add(curr.val);
                 }
+                
 
-            }
-            else{
-                last= curr;
                 if(curr.left != null){
                     q.add(curr.left);
                     }
@@ -31,7 +27,6 @@ class Solution {
                     q.add(curr.right);
                     }
             }
-            
         }
 
         return result;
