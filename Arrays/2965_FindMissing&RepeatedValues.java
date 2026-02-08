@@ -1,5 +1,6 @@
 //Time Complexity: O(n²)
-//Space Complexity: O(n²) (because of the frequency array)
+//Space Complexity: O(n²) (because of the frequency array which depends on input size n*n+1)
+//If extra space depends on input size → it’s NOT O(1).
 
 class Solution {
     public int[] findMissingAndRepeatedValues(int[][] grid) {
